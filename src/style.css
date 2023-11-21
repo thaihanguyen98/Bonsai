@@ -1,0 +1,396 @@
+:root {
+  --green-color: #00b289;
+  --font--color: #4c4d5f;
+  --white-color: #fff;
+  --yellow-color: #f8db62;
+  --grey-01: rgba(2, 4, 69, 0.15);
+  --grey-02: #4c525a;
+}
+body {
+  font-family: "Proxima Nova", sans-serif;
+  color: var(--grey-02);
+  max-width: 1440px;
+}
+
+.container {
+  padding: 0 150px;
+  margin: 0 auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 12px;
+  line-height: 1.5;
+}
+/* navbar*/
+.navbar {
+  overflow: hidden;
+  background-color: var(--white-color);
+  padding: 40px 10px;
+}
+
+.navbar a {
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--font--color);
+  text-decoration: none;
+  padding: 14px 16px;
+  text-align: center;
+}
+.nav-left {
+  float: left;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 100px;
+  height: 50px;
+}
+
+.nav-right {
+  float: right;
+  text-transform: uppercase;
+}
+
+.login {
+  border: 1px solid var(--green-color);
+  border-radius: 4px;
+  padding: 13px 23px 10px 23px;
+  background-color: #fff;
+  color: var(--green-color);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.startFree {
+  color: var(--white-color);
+  padding: 13px 28px 10px 28px;
+  border: 4px;
+  background-color: var(--green-color);
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+/* switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--green-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: var(--green-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--green-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.months-free {
+  vertical-align: top;
+  margin-top: -30px;
+}
+
+.months-free img {
+  margin-bottom: -30px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grids-3-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.heading {
+  padding: 150px 0 50px;
+}
+.card {
+  border: 1px solid var(--grey-01);
+  padding: 68px 45px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 68px 0px rgba(2, 4, 69, 0.08);
+}
+
+.card h1 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 0;
+}
+
+.card h3 {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  color: #4c525a;
+  max-width: 240px;
+}
+
+.list {
+  padding-top: 40px;
+  border-top: 2px solid var(--green-color);
+}
+
+.card ul {
+  padding-bottom: 40px;
+}
+
+.card button {
+  background-color: var(--green-color);
+  padding: 22px 90px;
+  border: none;
+  color: white;
+  align-self: stretch;
+  border-radius: 4px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.add-on-section {
+  margin: 80px 0 55px;
+}
+
+.add-on-section h1 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 44.8px;
+  color: #4c525a;
+}
+.block {
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 60px 0px rgba(2, 4, 69, 0.05);
+}
+
+.block h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+.block p {
+  margin: 0;
+}
+
+.price h2 {
+  float: right;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44.8px;
+  margin-top: 10px;
+}
+
+.learnMore {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #00b289;
+  text-decoration: none;
+  padding-top: 20px;
+}
+
+.business-section {
+  background-color: #f2faff;
+  padding: 64px 48px;
+  margin: 40px 20px;
+}
+
+.business span {
+  color: #00b289;
+}
+
+.business {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.business button {
+  color: white;
+  padding: 15px 25px;
+  background-color: #00b289;
+  flex-direction: column;
+  border-radius: 4px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.faqs {
+  padding: 85px;
+}
+
+.faqs h1 {
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  color: #00b289;
+}
+.accordion details {
+  padding-bottom: 20px;
+}
+.accordion summary {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+
+  transition: all 150ms ease-in-out;
+}
+
+.accordion summary:hover {
+  color: var(--green-color);
+}
+
+.accordion p {
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 760px;
+}
+
+summary {
+  list-style: none;
+}
+footer {
+  padding: 0 60px;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Helvetica;
+  line-height: 1.5;
+  letter-spacing: 0.11px;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.12px;
+  padding-bottom: 40px;
+}
+
+footer h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.11px;
+  margin-top: 26px;
+}
+
+footer h5 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.11px;
+  color: var(--green-color);
+}
+.grid-3-columns-2-rows {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr;
+}
+
+@media (max-width: 960px) {
+  .container,
+  .faqs,
+  footer {
+    padding: 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .block {
+    padding: 20px;
+  }
+  .price h2 {
+    float: none;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .business {
+    display: block;
+  }
+
+  .faqs h1 {
+    font-size: 24px;
+  }
+}
