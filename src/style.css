@@ -7,7 +7,7 @@
   --grey-02: #4c525a;
 }
 body {
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--grey-02);
   max-width: 1440px;
 }
@@ -151,9 +151,24 @@ input:checked + .slider:before {
 .heading {
   padding: 150px 0 50px;
 }
+
+.blue-shape {
+  background-color: #f2faff;
+  position: absolute;
+  border-radius: 6px;
+  z-index: -1;
+  transform: rotate(-23deg);
+  display: block;
+  top: -50%;
+  bottom: auto;
+  width: 90%;
+  right: -10%;
+  height: 120%;
+}
 .card {
   position: relative;
   border: 1px solid var(--grey-01);
+  background-color: var(--white-color);
   padding: 68px 45px;
   display: flex;
   flex-direction: column;
@@ -195,6 +210,7 @@ input:checked + .slider:before {
   margin: 0;
   color: #4c525a;
   max-width: 240px;
+  padding-bottom: 20px;
 }
 
 .list {
@@ -221,7 +237,32 @@ input:checked + .slider:before {
   line-height: 1.5;
 }
 
-.popular-tag {
+.list li {
+  list-style-image: url(green-tick.svg);
+}
+.dollar-sign {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  top: -20px;
+  position: relative;
+  margin-right: 10px;
+}
+.price-number {
+  color: var(--grey-02);
+  font-family: Inter;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  text-transform: uppercase;
 }
 
 .add-on-section {
@@ -241,6 +282,7 @@ input:checked + .slider:before {
   padding: 40px;
   margin-bottom: 20px;
   border-radius: 8px;
+  background-color: var(--white-color);
   box-shadow: 0px 0px 60px 0px rgba(2, 4, 69, 0.05);
 }
 
@@ -280,6 +322,11 @@ input:checked + .slider:before {
   background-color: #f2faff;
   padding: 64px 48px;
   margin: 40px 20px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 57px;
+  font-family: In;
 }
 
 .business span {
@@ -314,6 +361,11 @@ input:checked + .slider:before {
   font-weight: 700;
   line-height: 38px;
   color: #00b289;
+  text-transform: capitalize;
+}
+
+summary i {
+  color: #cecece;
 }
 .accordion details {
   padding-bottom: 20px;
@@ -323,8 +375,9 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 700;
   line-height: 30px;
-
   transition: all 150ms ease-in-out;
+  display: flex;
+  justify-content: space-between;
 }
 
 .accordion summary:hover {
@@ -394,7 +447,9 @@ footer h5 {
   footer {
     padding: 0 20px;
   }
-
+  .blue-shape {
+    display: none;
+  }
   .grid {
     grid-template-columns: 1fr;
     grid-gap: 10px;
