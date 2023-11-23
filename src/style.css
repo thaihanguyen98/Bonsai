@@ -152,11 +152,31 @@ input:checked + .slider:before {
   padding: 150px 0 50px;
 }
 .card {
+  position: relative;
   border: 1px solid var(--grey-01);
   padding: 68px 45px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 68px 0px rgba(2, 4, 69, 0.08);
+  overflow: hidden;
+}
+
+.popular-tag {
+  position: absolute;
+  left: auto;
+  top: 50px;
+  right: -209px;
+  bottom: auto;
+  width: 360px;
+  padding: 11px 100px;
+  background-color: var(--green-color);
+  transform: rotate(45deg);
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .card h1 {
@@ -199,6 +219,9 @@ input:checked + .slider:before {
   text-align: center;
   font-size: 13px;
   line-height: 1.5;
+}
+
+.popular-tag {
 }
 
 .add-on-section {
