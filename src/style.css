@@ -6,75 +6,99 @@
   --grey-01: rgba(2, 4, 69, 0.15);
   --grey-02: #4c525a;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Helvetica;
   color: var(--grey-02);
-  max-width: 1440px;
 }
 
 .container {
   padding: 0 150px;
-  margin: 0 auto;
 }
 a {
   text-decoration: none;
 }
-ul {
-  padding: 0;
-  margin: 0;
-}
 
 li {
   list-style: none;
-  padding: 12px;
   line-height: 1.5;
 }
 /* navbar*/
 header {
   background-color: var(--white-color);
-  max-width: 1440px;
   width: 100%;
 }
-.logo {
-  width: 149.949px;
-  height: 31.05px;
-  flex-shrink: 0;
-}
+
 .navbar {
-  padding: 20px 160px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  background-color: var(--white-color);
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 20px 60px;
 }
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 100px;
+  width: 850px;
 }
 
-.nav-left a {
-  padding: 15px 40px 17px 0px;
-  color: var(--grey-02);
+.nav-left,
+.nav-right,
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav a {
+  color: #4c4d5f;
+  font-family: "Inter";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
+  padding-right: 8px;
 }
 
-.nav-left a > i {
+.nav i {
   padding-left: 8px;
 }
 
+.logo img {
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 100%;
+  width: 150px;
+}
+
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #4c4d5f;
+}
 .heading {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
 }
-.login {
-  padding: 13px 23px 10px 23px;
+.login button {
+  padding: 13px 23px 10px;
   flex-direction: column;
   align-items: center;
   background-color: white;
@@ -89,8 +113,8 @@ header {
   text-transform: uppercase;
 }
 
-.startFree {
-  padding: 13px 28px 10px 28px;
+.startFree button {
+  padding: 13px 28px 10px;
   flex-direction: column;
   align-items: center;
   background-color: var(--green-color);
@@ -103,6 +127,10 @@ header {
   line-height: 16px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
+}
+
+.nav-buttons {
+  gap: 10px;
 }
 /* switch*/
 .switch {
@@ -232,8 +260,8 @@ input:checked + .slider:before {
 .popular-tag {
   position: absolute;
   left: auto;
-  top: 50px;
-  right: -209px;
+  top: 40px;
+  right: -120px;
   bottom: auto;
   width: 360px;
   padding: 11px 100px;
@@ -292,6 +320,7 @@ input:checked + .slider:before {
 
 .list li {
   list-style-image: url(green-tick.svg);
+  padding: 0 0 20px 12px;
 }
 .dollar-sign {
   font-size: 30px;
@@ -365,7 +394,7 @@ input:checked + .slider:before {
 }
 
 .learnMore a {
-  color: #00b289;
+  color: var(--green-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -386,7 +415,7 @@ input:checked + .slider:before {
 }
 
 .business span {
-  color: #00b289;
+  color: var(--green-color);
 }
 
 .business {
@@ -398,7 +427,7 @@ input:checked + .slider:before {
 .business button {
   color: white;
   padding: 15px 25px;
-  background-color: #00b289;
+  background-color: var(--green-color);
   flex-direction: column;
   border-radius: 4px;
   border: none;
@@ -513,7 +542,7 @@ footer h5 {
   grid-template-rows: 2fr;
 }
 
-@media (max-width: 960px) {
+@media only screen and (max-width: 960px) {
   .container,
   .faqs,
   footer {
@@ -522,9 +551,41 @@ footer h5 {
   .blue-shape {
     display: none;
   }
-  .nav {
-    display: none;
+
+  .navbar > .nav {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    position: absolute;
+    flex-direction: column;
+    left: -100%;
+    text-align: center;
+    overflow-y: hidden;
+    top: 5rem;
+    display: block;
   }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .heading {
     padding: 50px 0 40px;
     flex-direction: column;

@@ -27,15 +27,28 @@
         <div class="logo"><img src="src/logo.svg" /></div>
         <div class="nav">
           <div class="nav-left">
-            <a href="#">Pricing<i class="fa fa-chevron-down"></i></a>
-            <a href="#">Review<i class="fa fa-chevron-down"></i></a>
-            <a href="#">Pricing</a>
-            <a href="#">Review</a>
+            <div class="nav-item">
+              <a href="#" class="nav-link"
+                >Products<i class="fa fa-chevron-down"></i
+              ></a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link"
+                >Templates<i class="fa fa-chevron-down"></i
+              ></a>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-link">Pricing</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Review</a></div>
           </div>
           <div class="nav-right">
-            <button class="login">Log in</button>
-            <button href="#" class="startFree">Start Free</button>
+            <div class="login"><button>Log in</button></div>
+            <div class="startFree"><button href="#">Start Free</button></div>
           </div>
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
       </nav>
     </header>
@@ -381,4 +394,24 @@
       </footer>
     </div>
   </body>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
 </html>
